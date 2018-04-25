@@ -9,4 +9,5 @@ The project consists in making a program that reads an image and transforming it
 make clear
 make install
 make run
+make sobel
 ```
