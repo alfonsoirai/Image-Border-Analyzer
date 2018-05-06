@@ -6,7 +6,7 @@ import sys
 import math
 import io
 
-class Sobel:
+class Prewitt:
 
     def __init__(self, path, root):
         self.imagePath = path
@@ -25,7 +25,7 @@ class Sobel:
         self.panelBotones = Canvas(self.root, width=150, height=self.h)
         self.boton = Button(self.panelBotones, text = 'Grey Scale', fg = 'black', command = self.black_and_white)
         self.panel = self.panelBotones.create_window(5,0, anchor = 'nw', window = self.boton)
-        self.boton = Button(self.panelBotones, text = 'Sobel Convertion', fg = 'black', command = self.sobel_convertion)
+        self.boton = Button(self.panelBotones, text = 'Prewitt Convertion', fg = 'black', command = self.prewitt_convertion)
         self.panel = self.panelBotones.create_window(5,30, anchor = 'nw', window = self.boton)
         self.panelBotones.pack(side=LEFT)
         self.canvas.pack()
@@ -53,16 +53,16 @@ class Sobel:
         self.actualImage = greyImage
         self.update_image()
 
-    def sobel_convertion(self):
+    def prewitt_convertion(self):
         image = imread('prueba_gris.jpg')
-        xMatrix = np.array([[1, 0, -1],
-                            [2, 0, -2],
-                            [1, 0, -1]])
-        yMatrix = np.array([[-1, -2, -1],
+        xMatrix = np.array([[-1, 0, 1],
+                            [-1, 0, 1],
+                            [-1, 0, 1]])
+        yMatrix = np.array([[-1, -1, -1],
                             [0, 0, 0],
-                            [1, 2, 1]])
+                            [1, 1, 1]])
 
-        sobelImage = np.zeros((image.shape[0]-2, image.shape[1]-2, 3), dtype='uint8')
+        prewittImage = np.zeros((image.shape[0]-2, image.shape[1]-2, 3), dtype='uint8')
 
         for y in range(1, image.shape[0]-1):
             for x in range(1, image.shape[1]-1):
@@ -77,9 +77,9 @@ class Sobel:
                 else:
                     gradient = 0
 
-                sobelImage[y-1][x-2] = gradient
+                prewittImage[y-1][x-2] = gradient
 
-        self.actualImage = Image.fromarray(sobelImage)
+        self.actualImage = Image.fromarray(prewittImage)
         self.update_image()
 
 def main():
@@ -89,8 +89,8 @@ def main():
         print "Selecciona una imagen"
         return
     root = Tk()
-    conversion = Sobel(imagePath, root)
-    root.title("Sobel Conversion")
+    conversion = Prewitt(imagePath, root)
+    root.title("Prewitt Conversion")
     root.mainloop()
 
 
