@@ -11,5 +11,7 @@ sobel:
 	@python sobelFilter.py
 prewitt:
 	@python prewittFilter.py
+roberts:
+	@python robertsFilter.py
 clean:
 	@clear
