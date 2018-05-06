@@ -9,5 +9,7 @@ gray:
 	@python grey.py
 sobel:
 	@python sobelFilter.py
+prewitt:
+	@python prewittFilter.py
 clean:
 	@clear
