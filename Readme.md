@@ -13,4 +13,5 @@ make clear
 make install
 make run
 make sobel
+make prewitt
 ```
