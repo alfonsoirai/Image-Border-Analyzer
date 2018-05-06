@@ -14,4 +14,5 @@ make install
 make run
 make sobel
 make prewitt
+make roberts
 ```
