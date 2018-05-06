@@ -5,9 +5,9 @@ install:
 	@sudo pip install pil
 	@sudo pip install numpy
 	@sudo pip install scipy
-run:
-	@python app.py
+gray:
+	@python grey.py
 sobel:
-	@python sobel.py
+	@python sobelFilter.py
 clean:
 	@clear
