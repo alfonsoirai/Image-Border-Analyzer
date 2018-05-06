@@ -15,4 +15,5 @@ make run
 make sobel
 make prewitt
 make roberts
+make gaussian
 ```

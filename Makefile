@@ -13,5 +13,7 @@ prewitt:
 	@python prewittFilter.py
 roberts:
 	@python robertsFilter.py
+gaussian:
+	@python gaussianFilter.py
 clean:
 	@clear
