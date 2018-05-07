@@ -16,4 +16,5 @@ make sobel
 make prewitt
 make roberts
 make gaussian
+make box
 ```
