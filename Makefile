@@ -15,5 +15,7 @@ roberts:
 	@python robertsFilter.py
 gaussian:
 	@python gaussianFilter.py
+box:
+	@python boxFilter.py
 clean:
 	@clear
